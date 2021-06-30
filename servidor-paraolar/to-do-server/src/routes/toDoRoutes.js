@@ -6,7 +6,11 @@ router.get("/", controller.getAll)
 router.get("/:id", controller.getById)
 
 router.post("/cadastrar", controller.createTask)
+router.put("/:id", controller.replaceTask)
+router.patch("/updateName/:id", controller.updateDescricao)
+router.patch("/update/:id", controller.updateAnything)
 
 router.delete("/:id", controller.deleteTask)
+
 
 module.exports = router

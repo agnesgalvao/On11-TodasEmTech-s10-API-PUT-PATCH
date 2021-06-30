@@ -1,12 +1,16 @@
-const controller  = require("../controllers/filmesController")//chama o controler
+const controller  = require("../controllers/filmesController")
 
-const express = require("express")//chamando o express 
-const router = express.Router()//executando Router
+const express = require("express")
+const router = express.Router()
 
-router.get("/todos", controller.getAll)//configurando continuação da rota e dizendo q ela vai usar a função getAll que esta no controller
+router.get("/todos", controller.getAll)
+router.post("/cadastrar", controller.cadastrarFilmes)
 router.get("/title", controller.getByTitle)
 router.get("/genre", controller.getByGenre)
 router.get("/:id", controller.getById)
+router.put("/:id", controller.putFilmes)
+router.patch("/atualizar/:id", controller.patchFilmes)
+router.delete("/:id", controller.deleteFilme)
 
 
-module.exports = router //exportando o router
+module.exports = router 
